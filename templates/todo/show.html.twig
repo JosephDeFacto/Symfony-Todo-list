@@ -1,0 +1,12 @@
+<h2>Your Task</h2>
+
+<section id="ind-task">
+    <h4>Task: {{ todo.task }}</h4>
+    <h4>Status: {{ todo.status }}</h4><br>
+    {% if todo.status == 'Incomplete' %}
+    <a href="{{ path('todo_complete', {id: todo.id}) }}">Complete Task</a>
+    {% endif %}
+</section>
+<hr>
+<a href="{{ path('todo_new') }}">Create a new Task</a>
+<a href="{{ path('todo_index') }}">All your current Tasks</a>

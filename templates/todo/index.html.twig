@@ -1,0 +1,29 @@
+
+<h1>Your Tasks</h1>
+
+<h5>Incomplete Tasks</h5>
+<section id="incomplete-tasks">
+    <ul>
+        {% for todo in incompleteTodos %}
+        <li id="incomplete-task">
+            Task: <a href="{{ path('todo_show', {id: todo.id}) }}">{{ todo.task }}</a><br>
+            Status: {{ todo.status }}<br>
+            <a href="{{ path('todo_complete', {id: todo.id }) }}">Complete Task</a>
+        </li><br>
+        {% endfor %}
+    </ul>
+</section>
+
+<h5>Completed Tasks</h5>
+<section id="complete-task">
+    <ul>
+        {% for todo in completeTodos %}
+        <li id="complete-task">
+            Task: <a href="{{ path('todo_show', {id: todo.id}) }}">{{ todo.task }}</a><br>
+            Status: {{ todo.status }}
+        </li><br>
+        {% endfor %}
+    </ul>
+</section>
+
+<a href="{{ path('todo_new') }}">Create a new Task</a>
